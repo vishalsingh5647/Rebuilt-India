@@ -1,11 +1,30 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const pills = [
-  { text: 'Top Stories' },
-  { text: 'Tower Visit Paris City Tour' },
-  { text: 'Holiday Tour in Dubai' },
-  { text: 'MacBook Pro for Business Man' },
-  { text: 'Beautiful Cities in the World' }
+  {
+    text: 'Top Stories',
+    indicator: true
+  },
+  {
+    text: 'Best Nightlife Cities in the World',
+    img: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=200&auto=format&fit=crop'
+  },
+  {
+    text: 'Eiffel Tower Visit Paris City Tour',
+    img: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?q=80&w=200&auto=format&fit=crop'
+  },
+  {
+    text: 'Holiday Tour in Dubai',
+    img: 'https://images.unsplash.com/photo-1529778873920-4da4926a72c2?q=80&w=200&auto=format&fit=crop'
+  },
+  {
+    text: 'Beautiful Cities in the World',
+    img: 'https://images.unsplash.com/photo-1508830524289-0adcbe822b40?q=80&w=200&auto=format&fit=crop'
+  },
+  {
+    text: 'MacBook Pro for Business Man',
+    img: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=200&auto=format&fit=crop'
+  }
 ];
 
 const data = {
@@ -68,16 +87,28 @@ const TopStories = () => {
   return (
     <section className="bg-gray-50">
       <div className="container mx-auto px-4 py-6">
-        <div className="flex items-center gap-3 overflow-x-auto whitespace-nowrap pb-3">
-          {pills.map((p, i) => (
-            <div
-              key={i}
-              className={`flex items-center gap-2 px-3 py-2 rounded-full border ${i === 0 ? 'bg-red-500 text-white border-red-500' : 'bg-white text-gray-700 border-gray-200'} shadow-sm`}
-            >
-              <span className="inline-block w-6 h-6 rounded-full bg-gray-200" />
-              <span className="text-sm">{p.text}</span>
-            </div>
-          ))}
+        <div className="relative overflow-hidden pb-3 group">
+          <div className="flex items-center gap-4 whitespace-nowrap w-max animate-marquee">
+            {[...pills, ...pills].map((p, i) => (
+              <div
+                key={i}
+                className="flex items-center gap-3 px-3 py-2 rounded-full bg-white text-gray-800 border border-gray-200 shadow-sm"
+              >
+                {p.indicator ? (
+                  <span className="relative grid place-items-center w-6 h-6 rounded-full border-2 border-red-300 bg-white">
+                    <span className="w-2.5 h-2.5 rounded-full bg-red-600" />
+                  </span>
+                ) : p.img ? (
+                  <img src={p.img} alt={p.text} className="w-8 h-8 rounded-full object-cover" />
+                ) : (
+                  <span className="inline-block w-8 h-8 rounded-full bg-gray-200" />
+                )}
+                <span className="text-sm font-medium">
+                  {p.text}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4">

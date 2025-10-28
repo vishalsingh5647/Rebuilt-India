@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Search, ChevronDown } from 'lucide-react';
+import { Search, ChevronDown, Linkedin as LinkedinIcon } from 'lucide-react';
 
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState(null);
@@ -24,13 +24,13 @@ const Navbar = () => {
     { name: 'BUY IT NOW', path: '/buy', highlight: true }
   ];
 
+  // Social icons rendered as brand SVGs from Simple Icons CDN
+  // Colors: icon (gray-300), button bg (gray-700), hover bg (gray-600)
   const socialIcons = [
-    { name: 'Facebook', icon: '📘', url: '#' },
-    { name: 'Twitter', icon: '🐦', url: '#' },
-    { name: 'YouTube', icon: '▶️', url: '#' },
-    { name: 'Vimeo', icon: '🎬', url: '#' },
-    { name: 'LinkedIn', icon: '💼', url: '#' },
-    { name: 'Instagram', icon: '📷', url: '#' }
+    { name: 'Facebook', brand: 'facebook', url: '#' },
+    { name: 'YouTube', brand: 'youtube', url: '#' },
+    { name: 'LinkedIn', brand: 'linkedin', url: '#' },
+    { name: 'Instagram', brand: 'instagram', url: '#' }
   ];
 
   return (
@@ -45,15 +45,26 @@ const Navbar = () => {
             <a href="#" className="text-gray-300 hover:text-white transition-colors">Documentation</a>
             <span className="text-gray-500">|</span>
             <a href="#" className="text-gray-300 hover:text-white transition-colors">Buy It Now</a>
-            <div className="flex items-center gap-3 ml-4">
+            <div className="flex items-center gap-2 ml-4">
               {socialIcons.map((social, index) => (
                 <a
                   key={index}
                   href={social.url}
-                  className="text-gray-300 hover:text-white transition-colors text-base"
                   aria-label={social.name}
+                  className="w-9 h-9 grid place-items-center rounded-sm bg-gray-700/90 border border-gray-600 hover:bg-gray-600 transition-colors"
                 >
-                  {social.icon}
+                  {social.brand === 'linkedin' ? (
+                    <LinkedinIcon size={16} className="text-gray-300" />
+                  ) : (
+                    <img
+                      src={`https://cdn.simpleicons.org/${social.brand}/d1d5db`}
+                      alt={social.name}
+                      className="w-4 h-4"
+                      loading="lazy"
+                      width="16"
+                      height="16"
+                    />
+                  )}
                 </a>
               ))}
             </div>
