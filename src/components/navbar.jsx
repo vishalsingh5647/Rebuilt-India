@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Search, ChevronDown, Linkedin as LinkedinIcon } from 'lucide-react';
 
 const Navbar = () => {
@@ -20,11 +20,24 @@ const Navbar = () => {
     { name: 'SPORTS', path: '/sports' },
     { name: 'BLOG', path: '/blog' },
     { name: 'SUPPORT', path: '/support' },
-    { name: 'SUBSCRIBE', path: '/subscribe', highlight: true }
+    { name: 'SUBSCRIBE', path: '/subscribe' }
   ];
 
   // Social icons rendered as brand SVGs from Simple Icons CDN
   // Colors: icon (gray-300), button bg (gray-700), hover bg (gray-600)
+  // Track current pathname to highlight active link
+  const [pathname, setPathname] = useState(typeof window !== 'undefined' ? window.location.pathname : '/');
+  useEffect(() => {
+    const update = () => setPathname(window.location.pathname);
+    window.addEventListener('popstate', update);
+    return () => window.removeEventListener('popstate', update);
+  }, []);
+  const isActive = (path) => {
+    if (!pathname) return false;
+    if (path === '/') return pathname === '/';
+    return pathname.startsWith(path);
+  };
+
   const socialIcons = [
     { name: 'Facebook', brand: 'facebook', url: '#' },
     { name: 'YouTube', brand: 'youtube', url: '#' },
@@ -113,7 +126,7 @@ const Navbar = () => {
                     className={`
                       flex items-center gap-1 px-4 py-4 text-sm font-medium
                       hover:bg-red-700 transition-colors
-                      ${link.highlight ? 'bg-red-700' : ''}
+                      ${isActive(link.path) ? 'bg-red-700' : ''}
                     `}
                   >
                     {link.name}
