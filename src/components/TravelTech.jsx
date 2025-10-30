@@ -1,4 +1,4 @@
-const Tag = ({ children, color = 'text-rose-600' }) => (
+const Tag = ({ children, color = 'text-red-600' }) => (
   <span className={`text-[11px] font-bold uppercase tracking-wide ${color}`}>{children}</span>
 );
 
@@ -10,7 +10,7 @@ const Featured = ({ item }) => (
     <div className="p-4">
       <div className="flex items-center gap-3 text-[11px] font-semibold mb-1">
         <Tag>MAIN STORIES</Tag>
-        <Tag color="text-indigo-600">{item.tag}</Tag>
+        <Tag color="text-red-700">{item.tag}</Tag>
       </div>
       <h3 className="text-xl font-semibold text-gray-900 leading-snug">{item.title}</h3>
       <p className="text-xs text-gray-500 mt-1">{item.date} / {item.author}</p>
@@ -24,8 +24,8 @@ const RowCard = ({ item }) => (
     <img src={item.img} alt={item.title} className="w-24 h-16 object-cover rounded" />
     <div className="min-w-0">
       <div className="flex items-center gap-2 text-[11px] font-semibold">
-        <Tag color="text-indigo-600">{item.tag1}</Tag>
-        {item.tag2 && <Tag color="text-sky-500">{item.tag2}</Tag>}
+        <Tag color="text-red-600">{item.tag1}</Tag>
+        {item.tag2 && <Tag color="text-red-700">{item.tag2}</Tag>}
       </div>
       <h4 className="text-sm font-semibold text-gray-900 mt-1 line-clamp-2">{item.title}</h4>
       <p className="text-[11px] text-gray-500">{item.date} / {item.author}</p>

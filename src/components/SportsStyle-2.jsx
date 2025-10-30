@@ -25,7 +25,7 @@ const items = [
   }
 ];
 
-const Pill = ({ children, color = 'bg-teal-500' }) => (
+const Pill = ({ children, color = 'bg-red-600' }) => (
   <span className={`text-white text-[10px] font-semibold px-2 py-1 rounded ${color}`}>{children}</span>
 );
 
@@ -57,7 +57,7 @@ const SportsStyle2 = () => {
           <h2 className="text-gray-800 font-semibold">Sports – Style 2</h2>
           <div className="flex items-center gap-3">
             <div className="hidden sm:block w-32 h-1 bg-gray-200 rounded overflow-hidden">
-              <div className="h-full bg-blue-600 transition-all" style={{ width: `${progress}%` }} />
+              <div className="h-full bg-red-600 transition-all" style={{ width: `${progress}%` }} />
             </div>
             <div className="flex gap-2">
               <button onClick={prev} className="p-1.5 rounded border border-gray-200 text-gray-600 hover:bg-gray-100"><ChevronLeft size={16} /></button>
@@ -72,8 +72,8 @@ const SportsStyle2 = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
             <div className="absolute left-4 bottom-4 right-4 text-white">
               <div className="flex gap-2 mb-2">
-                <Pill color="bg-emerald-600">{it.tags[0]}</Pill>
-                {it.tags[1] && <Pill color="bg-lime-500">{it.tags[1]}</Pill>}
+                <Pill color="bg-red-600">{it.tags[0]}</Pill>
+                {it.tags[1] && <Pill color="bg-red-700">{it.tags[1]}</Pill>}
               </div>
               <h3 className="text-2xl md:text-3xl font-bold leading-tight drop-shadow">{it.title}</h3>
               <p className="text-xs text-gray-200 mt-1">{it.date} / {it.author}</p>

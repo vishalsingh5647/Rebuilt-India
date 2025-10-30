@@ -42,7 +42,7 @@ const healthData = {
   ]
 };
 
-const Pill = ({ text, color = 'bg-emerald-600' }) => (
+const Pill = ({ text, color = 'bg-red-600' }) => (
   <span className={`text-[10px] font-semibold text-white px-2 py-1 rounded ${color}`}>{text}</span>
 );
 
@@ -74,7 +74,7 @@ const Health = () => {
                 <div className="min-w-0">
                   <div className="flex gap-2">
                     <Pill text={it.tag} />
-                    {it.subTag && <Pill text={it.subTag} color="bg-lime-500" />}
+                    {it.subTag && <Pill text={it.subTag} color="bg-red-700" />}
                   </div>
                   <h4 className="text-sm font-semibold text-gray-900 mt-1 line-clamp-2">{it.title}</h4>
                   <p className="text-[11px] text-gray-500">{it.date} / {it.author}</p>

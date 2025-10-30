@@ -64,7 +64,7 @@ const data = {
   ]
 };
 
-const Tag = ({ children, color = 'bg-blue-600' }) => (
+const Tag = ({ children, color = 'bg-red-600' }) => (
   <span className={`text-white text-[10px] font-semibold px-2 py-1 rounded ${color}`}>{children}</span>
 );
 

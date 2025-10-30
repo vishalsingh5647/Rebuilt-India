@@ -19,9 +19,8 @@ const Navbar = () => {
     { name: 'FASHION', path: '/fashion' },
     { name: 'SPORTS', path: '/sports' },
     { name: 'BLOG', path: '/blog' },
-    { name: 'LAYOUTS', path: '/layouts', hasDropdown: true },
-    { name: 'SUPPORT', path: '/support', hasDropdown: true },
-    { name: 'BUY IT NOW', path: '/buy', highlight: true }
+    { name: 'SUPPORT', path: '/support' },
+    { name: 'SUBSCRIBE', path: '/subscribe', highlight: true }
   ];
 
   // Social icons rendered as brand SVGs from Simple Icons CDN
@@ -40,11 +39,11 @@ const Navbar = () => {
         <div className="container mx-auto px-4 py-2 flex justify-between items-center">
           <div className="text-gray-300">{currentDate}</div>
           <div className="flex items-center gap-6">
-            <a href="#" className="text-gray-300 hover:text-white transition-colors">Support</a>
+            <a href="#" className="text-gray-300 hover:text-white transition-colors">About</a>
             <span className="text-gray-500">|</span>
-            <a href="#" className="text-gray-300 hover:text-white transition-colors">Documentation</a>
+            <a href="#" className="text-gray-300 hover:text-white transition-colors">Contact</a>
             <span className="text-gray-500">|</span>
-            <a href="#" className="text-gray-300 hover:text-white transition-colors">Buy It Now</a>
+            <a href="#" className="text-gray-300 hover:text-white transition-colors">Advertise</a>
             <div className="flex items-center gap-2 ml-4">
               {socialIcons.map((social, index) => (
                 <a
@@ -76,16 +75,19 @@ const Navbar = () => {
       <div className="bg-black text-white py-6">
         <div className="container mx-auto px-4 flex justify-between items-center">
           {/* Logo */}
-          <div>
-            <h1 className="text-4xl font-bold tracking-tight">NewsCard Pro</h1>
-            <p className="text-gray-400 text-sm mt-1">Just another News/Magazine site</p>
-          </div>
+          <a href="/" className="flex items-center gap-3">
+            <img src="/Logo/Logo.jpeg" alt="Site logo" className="h-12 w-auto object-contain" loading="eager" decoding="async" />
+            <div className="leading-tight">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">Rebuilt India</h1>
+              <p className="text-gray-400 text-xs sm:text-sm mt-0.5">News, Tech, Travel and more</p>
+            </div>
+          </a>
 
           {/* Advertisement Banner */}
-          <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-8 py-4 rounded-lg flex items-center gap-4">
+          <div className="bg-gradient-to-r from-red-600 to-red-700 px-8 py-4 rounded-lg flex items-center gap-4">
             <div>
               <div className="text-2xl font-bold">ADVERTISEMENT SECTION</div>
-              <div className="text-sm text-blue-200">EASILY ADD BANNER ADVERTISEMENT HERE</div>
+              <div className="text-sm text-red-200">EASILY ADD BANNER ADVERTISEMENT HERE</div>
             </div>
             <div className="bg-white text-black px-4 py-2 rounded font-bold text-sm">
               ADVERTISEMENT<br />SECTION
@@ -95,7 +97,7 @@ const Navbar = () => {
       </div>
 
       {/* Navigation Menu */}
-      <div className="bg-[#2563eb] text-white">
+      <div className="bg-red-600 text-white">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between">
             <ul className="flex items-center">
@@ -110,8 +112,8 @@ const Navbar = () => {
                     href={link.path}
                     className={`
                       flex items-center gap-1 px-4 py-4 text-sm font-medium
-                      hover:bg-[#1e40af] transition-colors
-                      ${link.highlight ? 'bg-[#1e40af]' : ''}
+                      hover:bg-red-700 transition-colors
+                      ${link.highlight ? 'bg-red-700' : ''}
                     `}
                   >
                     {link.name}
@@ -127,7 +129,7 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-            <button className="p-3 hover:bg-[#1e40af] transition-colors" aria-label="Search">
+            <button className="p-3 hover:bg-red-700 transition-colors" aria-label="Search">
               <Search size={20} />
             </button>
           </div>

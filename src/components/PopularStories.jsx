@@ -48,8 +48,8 @@ const Card = ({ item }) => (
     <div className="relative h-40">
       <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
       <div className="absolute inset-x-0 bottom-0 p-3 flex gap-2">
-        <Tag color="bg-teal-500">{item.tags[0]}</Tag>
-        <Tag color="bg-indigo-600">{item.tags[1]}</Tag>
+        <Tag color="bg-red-600">{item.tags[0]}</Tag>
+        <Tag color="bg-red-700">{item.tags[1]}</Tag>
       </div>
     </div>
     <div className="p-3">
@@ -117,7 +117,7 @@ const PopularStories = () => {
             <h2 className="text-gray-800 font-semibold">Popular Stories</h2>
             {/* timeline/progress bar */}
             <div className="hidden sm:block w-32 h-1 bg-gray-200 rounded overflow-hidden">
-              <div className="h-full bg-blue-600 transition-all" style={{ width: `${progress}%` }} />
+              <div className="h-full bg-red-600 transition-all" style={{ width: `${progress}%` }} />
             </div>
           </div>
           <div className="flex gap-2">

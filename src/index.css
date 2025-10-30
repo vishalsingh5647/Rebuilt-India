@@ -4,6 +4,9 @@
 @layer base {
   :root {
     --site-max-w: 1200px;
+    --brand-red: #dc2626; /* red-600 */
+    --brand-red-dark: #b91c1c; /* red-700 */
+    --brand-black: #0a0a0a; /* near-black used in headers */
   }
 }
 

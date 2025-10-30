@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-const Tag = ({ children, color = 'bg-fuchsia-600' }) => (
+const Tag = ({ children, color = 'bg-red-600' }) => (
   <span className={`text-white text-[10px] font-semibold px-2 py-1 rounded ${color}`}>{children}</span>
 );
 
@@ -49,7 +49,7 @@ const Card = ({ item }) => (
       <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
       <div className="absolute left-3 bottom-3 flex gap-2">
         {item.tags.slice(0, 3).map((t, i) => (
-          <Tag key={i} color={i === 0 ? 'bg-fuchsia-600' : i === 1 ? 'bg-lime-600' : 'bg-indigo-600'}>{t}</Tag>
+          <Tag key={i} color={i === 0 ? 'bg-red-600' : i === 1 ? 'bg-red-700' : 'bg-red-800'}>{t}</Tag>
         ))}
       </div>
     </div>
@@ -134,7 +134,7 @@ const YouMissed = () => {
           <div className="flex items-center gap-3">
             <h2 className="text-gray-800 font-semibold">You may Missed</h2>
             <div className="hidden sm:block w-32 h-1 bg-gray-200 rounded overflow-hidden">
-              <div className="h-full bg-blue-600 transition-all" style={{ width: `${progress}%` }} />
+              <div className="h-full bg-red-600 transition-all" style={{ width: `${progress}%` }} />
             </div>
           </div>
           <div className="flex gap-2">

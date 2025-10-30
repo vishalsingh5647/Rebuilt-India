@@ -1,4 +1,4 @@
-const Tag = ({ children, color = 'bg-rose-600' }) => (
+const Tag = ({ children, color = 'bg-red-600' }) => (
   <span className={`text-white text-[10px] font-semibold px-2 py-1 rounded ${color}`}>{children}</span>
 );
 
@@ -10,7 +10,7 @@ const OverlayCard = ({ item }) => (
       <div className="absolute left-3 bottom-3 right-3 text-white">
         <div className="flex gap-2 mb-2">
           {item.tags.map((t, i) => (
-            <Tag key={i} color={i === 0 ? 'bg-rose-600' : 'bg-indigo-600'}>{t}</Tag>
+            <Tag key={i} color={i === 0 ? 'bg-red-600' : 'bg-red-700'}>{t}</Tag>
           ))}
         </div>
         <h3 className="text-lg md:text-xl font-semibold leading-tight drop-shadow">{item.title}</h3>

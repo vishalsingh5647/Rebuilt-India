@@ -1,4 +1,4 @@
-const Tag = ({ children, color = 'text-fuchsia-600' }) => (
+const Tag = ({ children, color = 'text-red-600' }) => (
   <span className={`text-[11px] font-bold uppercase tracking-wide ${color}`}>{children}</span>
 );
 
@@ -22,7 +22,7 @@ const RowCard = ({ item }) => (
     <div className="min-w-0">
       <div className="flex items-center gap-2 text-[11px] font-semibold">
         <Tag>FASHION</Tag>
-        {item.sub && <Tag color="text-lime-600">{item.sub}</Tag>}
+        {item.sub && <Tag color="text-red-700">{item.sub}</Tag>}
       </div>
       <h4 className="text-sm md:text-base font-semibold text-gray-900 mt-1 line-clamp-2">{item.title}</h4>
       <p className="text-[11px] text-gray-500">{item.date} / {item.author}</p>

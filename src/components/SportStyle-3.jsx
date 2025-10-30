@@ -1,5 +1,5 @@
 const Pill = ({ children }) => (
-  <span className="text-[11px] font-bold uppercase tracking-wide text-lime-500">{children}</span>
+  <span className="text-[11px] font-bold uppercase tracking-wide text-red-600">{children}</span>
 );
 
 const Featured = ({ item }) => (
@@ -22,7 +22,7 @@ const RowCard = ({ item }) => (
     <div className="min-w-0">
       <div className="flex gap-2">
         {item.tags?.map((t, i) => (
-          <span key={i} className={`text-[11px] font-bold uppercase tracking-wide ${i === 0 ? 'text-emerald-600' : 'text-indigo-600'}`}>{t}</span>
+          <span key={i} className={`text-[11px] font-bold uppercase tracking-wide ${i === 0 ? 'text-red-600' : 'text-red-700'}`}>{t}</span>
         )) || <Pill>SPORTS</Pill>}
       </div>
       <h4 className="text-base font-semibold text-gray-900 mt-1 line-clamp-2">{item.title}</h4>

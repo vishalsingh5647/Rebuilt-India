@@ -74,7 +74,7 @@ const lists = {
   ]
 };
 
-const Tag = ({ children, color = 'bg-emerald-600' }) => (
+const Tag = ({ children, color = 'bg-red-600' }) => (
   <span className={`text-white text-[10px] font-semibold px-2 py-1 rounded ${color}`}>{children}</span>
 );
 
@@ -84,7 +84,7 @@ const SmallRow = ({ item }) => (
     <div className="min-w-0">
       <div className="flex gap-2">
         <Tag>{item.tags[0]}</Tag>
-        {item.tags[1] && <Tag color="bg-indigo-600">{item.tags[1]}</Tag>}
+        {item.tags[1] && <Tag color="bg-red-700">{item.tags[1]}</Tag>}
       </div>
       <h4 className="text-sm font-semibold text-gray-900 mt-1 line-clamp-2">{item.title}</h4>
       <p className="text-[11px] text-gray-500">{item.date} / {item.author}</p>
@@ -110,8 +110,8 @@ const Travel = () => {
             <img src={featured.img} alt={featured.title} className="w-full h-full object-cover" />
             <div className="absolute inset-x-0 bottom-0 p-4">
               <div className="flex gap-2 mb-1">
-                <Tag color="bg-teal-500">{featured.tags[0]}</Tag>
-                <Tag color="bg-indigo-600">{featured.tags[1]}</Tag>
+                <Tag color="bg-red-600">{featured.tags[0]}</Tag>
+                <Tag color="bg-red-700">{featured.tags[1]}</Tag>
               </div>
               <h3 className="text-white text-lg font-semibold drop-shadow">{featured.title}</h3>
               <p className="text-xs text-gray-200">{featured.date} / {featured.author}</p>

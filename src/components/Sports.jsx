@@ -34,7 +34,7 @@ const sports = [
   }
 ];
 
-const Pill = ({ text, color = 'bg-lime-500' }) => (
+const Pill = ({ text, color = 'bg-red-600' }) => (
   <span className={`text-[10px] font-semibold text-white px-2 py-1 rounded ${color}`}>{text}</span>
 );
 
@@ -48,7 +48,7 @@ const FeatureCard = ({ item, fadeKey }) => (
       <div className="absolute left-3 bottom-3 flex gap-2">
         {/* Render one or two tags */}
         <Pill text={(item.tags && item.tags[0]) || 'SPORTS'} />
-        {item.tags && item.tags[1] && <Pill text={item.tags[1]} color="bg-emerald-600" />}
+        {item.tags && item.tags[1] && <Pill text={item.tags[1]} color="bg-red-700" />}
       </div>
     </div>
     <div className="p-4">
@@ -107,7 +107,7 @@ const Sports = () => {
           <div className="flex items-center gap-3">
             <h2 className="text-gray-800 font-semibold">Sports</h2>
             <div className="hidden sm:block w-32 h-1 bg-gray-200 rounded overflow-hidden">
-              <div className="h-full bg-blue-600 transition-all" style={{ width: `${progress}%` }} />
+              <div className="h-full bg-red-600 transition-all" style={{ width: `${progress}%` }} />
             </div>
           </div>
           <div className="flex gap-2">
