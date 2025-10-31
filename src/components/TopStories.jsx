@@ -69,7 +69,7 @@ const Tag = ({ children, color = 'bg-red-600' }) => (
 );
 
 const OverlayCard = ({ item, height = 'h-80' }) => (
-  <div className={`relative rounded overflow-hidden ${height}`}>
+  <div className={`relative rounded overflow-hidden hover-lift animate-scaleIn ${height}`}>
     <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/0" />
     <div className="absolute bottom-0 p-4 text-white space-y-2">
@@ -85,7 +85,7 @@ const OverlayCard = ({ item, height = 'h-80' }) => (
 
 const TopStories = () => {
   return (
-    <section className="bg-gray-50">
+    <section className="bg-gray-50 animate-fadeUp">
       <div className="container mx-auto px-4 py-6">
         <div className="relative overflow-hidden pb-3 group">
           <div className="flex items-center gap-4 whitespace-nowrap w-max animate-marquee">

@@ -49,12 +49,12 @@ const Pill = ({ text, color = 'bg-red-600' }) => (
 const Health = () => {
   const f = healthData.feature;
   return (
-    <section className="bg-gray-50">
+    <section className="bg-gray-50 animate-fadeUp">
       <div className="max-w-6xl mx-auto px-2 sm:px-3 py-6">
         <h2 className="text-gray-800 font-semibold mb-3">Health</h2>
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
           <div className="md:col-span-8">
-            <div className="bg-white border border-gray-200 rounded overflow-hidden">
+            <div className="bg-white border border-gray-200 rounded overflow-hidden hover-lift animate-scaleIn">
               <div className="relative h-52 md:h-60">
                 <img src={f.img} alt={f.title} className="w-full h-full object-cover" />
               </div>
@@ -69,7 +69,7 @@ const Health = () => {
 
           <div className="md:col-span-4 space-y-3">
             {healthData.list.map((it, i) => (
-              <div key={i} className="bg-white border border-gray-200 rounded p-3 flex gap-3 items-start">
+              <div key={i} className="bg-white border border-gray-200 rounded p-3 flex gap-3 items-start hover-lift animate-scaleIn">
                 <img src={it.img} alt={it.title} className="w-20 h-16 object-cover rounded" />
                 <div className="min-w-0">
                   <div className="flex gap-2">

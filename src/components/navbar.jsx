@@ -3,6 +3,8 @@ import { Search, ChevronDown, Linkedin as LinkedinIcon } from 'lucide-react';
 
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState(null);
+  const [showSearch, setShowSearch] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const currentDate = new Date().toLocaleDateString('en-US', {
     weekday: 'long',
@@ -32,6 +34,12 @@ const Navbar = () => {
     window.addEventListener('popstate', update);
     return () => window.removeEventListener('popstate', update);
   }, []);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
   const isActive = (path) => {
     if (!pathname) return false;
     if (path === '/') return pathname === '/';
@@ -48,7 +56,7 @@ const Navbar = () => {
   return (
     <nav className="w-full">
       {/* Top Bar */}
-      <div className="bg-[#1a1a1a] text-white text-sm">
+      <div className="bg-[#1a1a1a] text-white text-sm animate-fadeDown">
         <div className="container mx-auto px-4 py-2 flex justify-between items-center">
           <div className="text-gray-300">{currentDate}</div>
           <div className="flex items-center gap-6">
@@ -85,7 +93,7 @@ const Navbar = () => {
       </div>
 
       {/* Logo and Advertisement Section */}
-      <div className="bg-black text-white py-6">
+      <div className="bg-black text-white py-6 animate-fadeDown">
         <div className="container mx-auto px-4 flex justify-between items-center">
           {/* Logo */}
           <a href="/" className="flex items-center gap-3">
@@ -110,10 +118,10 @@ const Navbar = () => {
       </div>
 
       {/* Navigation Menu */}
-      <div className="bg-red-600 text-white">
+      <div className={`bg-red-600 text-white sticky top-0 z-40 ${scrolled ? 'shadow-lg' : ''} animate-fadeDown`}>
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between">
-            <ul className="flex items-center">
+          <div className="relative flex items-center justify-between">
+            <ul className="flex items-center gap-1">
               {navLinks.map((link, index) => (
                 <li
                   key={index}
@@ -124,9 +132,9 @@ const Navbar = () => {
                   <a
                     href={link.path}
                     className={`
-                      flex items-center gap-1 px-4 py-4 text-sm font-medium
-                      hover:bg-red-700 transition-colors
-                      ${isActive(link.path) ? 'bg-red-700' : ''}
+                      flex items-center gap-1 px-4 py-4 text-sm font-medium tracking-wide
+                      hover:bg-red-700 transition-all border-b-2 border-transparent hover:border-white/80
+                      ${isActive(link.path) ? 'bg-red-700 border-white/90' : ''}
                     `}
                   >
                     {link.name}
@@ -142,9 +150,27 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-            <button className="p-3 hover:bg-red-700 transition-colors" aria-label="Search">
+            <button
+              className="p-3 hover:bg-red-700 transition-colors rounded"
+              aria-label="Search"
+              onClick={() => setShowSearch((v) => !v)}
+            >
               <Search size={20} />
             </button>
+            {showSearch && (
+              <div className="absolute right-0 top-full mt-2 bg-white text-gray-800 rounded shadow-lg p-2 w-72 animate-fadeDown">
+                <div className="flex items-center">
+                  <input
+                    type="text"
+                    placeholder="Search..."
+                    className="w-full border border-gray-200 rounded-l px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-red-600"
+                  />
+                  <button className="bg-red-600 hover:bg-red-700 text-white px-3 py-2 rounded-r">
+                    <Search size={16} />
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

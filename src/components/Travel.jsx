@@ -79,7 +79,7 @@ const Tag = ({ children, color = 'bg-red-600' }) => (
 );
 
 const SmallRow = ({ item }) => (
-  <div className="bg-white border border-gray-200 rounded p-3 flex gap-3 items-start">
+  <div className="bg-white border border-gray-200 rounded p-3 flex gap-3 items-start hover-lift animate-scaleIn">
     <img src={item.img} alt={item.title} className="w-16 h-14 object-cover rounded" />
     <div className="min-w-0">
       <div className="flex gap-2">
@@ -95,7 +95,7 @@ const SmallRow = ({ item }) => (
 const Travel = () => {
   const [tab, setTab] = useState('Popular');
   return (
-    <section className="bg-gray-50">
+    <section className="bg-gray-50 animate-fadeUp">
       <div className="w-full px-0">
         <div className="flex items-center justify-between mb-2 px-4 sm:px-0">
           <h2 className="text-gray-800 font-semibold">Travel – Style 3</h2>
@@ -105,7 +105,7 @@ const Travel = () => {
           </div>
         </div>
 
-        <div className="bg-white border border-gray-200 rounded overflow-hidden mx-4 sm:mx-0">
+        <div className="bg-white border border-gray-200 rounded overflow-hidden mx-4 sm:mx-0 hover-lift animate-scaleIn">
           <div className="relative h-56">
             <img src={featured.img} alt={featured.title} className="w-full h-full object-cover" />
             <div className="absolute inset-x-0 bottom-0 p-4">

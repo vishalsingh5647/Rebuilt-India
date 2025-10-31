@@ -3,7 +3,7 @@ const Tag = ({ children, color = 'bg-red-600' }) => (
 );
 
 const Card = ({ item }) => (
-  <div className="bg-white border border-gray-200 rounded overflow-hidden">
+  <div className="bg-white border border-gray-200 rounded overflow-hidden hover-lift animate-scaleIn">
     <div className="relative h-36 md:h-40">
       <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
       <div className="absolute left-3 bottom-3 flex gap-2">
@@ -73,7 +73,7 @@ const items = [
 
 const Random = () => {
   return (
-    <section className="bg-gray-50">
+    <section className="bg-gray-50 animate-fadeUp">
       <div className="container mx-auto px-4 py-6">
         <div className="flex items-center justify-between mb-3">
           <h2 className="text-gray-800 font-semibold">Random Posts</h2>

@@ -19,10 +19,10 @@ const Home = () => {
       <TopStories />
       <PopularStories />
 
-      <section className="bg-gray-50">
+      <section className="bg-gray-50 animate-fadeUp">
         <div className="container mx-auto px-4 py-6">
           <div className="grid grid-cols-1 md:grid-cols-10 gap-6">
-            <div className="md:col-span-7 space-y-6">
+            <div className="md:col-span-7 space-y-6 delay-100">
               <Health />
               <Sports />
               <TravelTech />
@@ -31,7 +31,7 @@ const Home = () => {
               <TravelStyle2 />
               <Random />
             </div>
-            <div className="md:col-span-3 space-y-6 md:sticky md:top-4 h-fit">
+            <div className="md:col-span-3 space-y-6 md:sticky md:top-4 h-fit delay-200">
               <Travel />
               <div className="px-2 sm:px-0">
                 <SportStyle3 />

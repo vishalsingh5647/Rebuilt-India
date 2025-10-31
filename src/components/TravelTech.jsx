@@ -3,7 +3,7 @@ const Tag = ({ children, color = 'text-red-600' }) => (
 );
 
 const Featured = ({ item }) => (
-  <div className="bg-white border border-gray-200 rounded overflow-hidden">
+  <div className="bg-white border border-gray-200 rounded overflow-hidden hover-lift animate-scaleIn">
     <div className="h-44 md:h-56 relative">
       <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
     </div>
@@ -20,7 +20,7 @@ const Featured = ({ item }) => (
 );
 
 const RowCard = ({ item }) => (
-  <div className="bg-white border border-gray-200 rounded overflow-hidden flex gap-3 p-3 items-start">
+  <div className="bg-white border border-gray-200 rounded overflow-hidden flex gap-3 p-3 items-start hover-lift animate-scaleIn">
     <img src={item.img} alt={item.title} className="w-24 h-16 object-cover rounded" />
     <div className="min-w-0">
       <div className="flex items-center gap-2 text-[11px] font-semibold">
@@ -106,7 +106,7 @@ const Column = ({ data }) => (
 
 const TravelTech = () => {
   return (
-    <section className="bg-gray-50">
+    <section className="bg-gray-50 animate-fadeUp">
       <div className="container mx-auto px-4 py-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           <Column data={travel} />

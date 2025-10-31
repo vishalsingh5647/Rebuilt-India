@@ -51,7 +51,7 @@ const SportsStyle2 = () => {
   const it = items[idx];
 
   return (
-    <section className="bg-gray-50">
+    <section className="bg-gray-50 animate-fadeUp">
       <div className="container mx-auto px-4 py-6">
         <div className="flex items-center justify-between mb-3">
           <h2 className="text-gray-800 font-semibold">Sports – Style 2</h2>
@@ -66,7 +66,7 @@ const SportsStyle2 = () => {
           </div>
         </div>
 
-        <div className="bg-white border border-gray-200 rounded overflow-hidden">
+        <div className="bg-white border border-gray-200 rounded overflow-hidden hover-lift animate-scaleIn">
           <div className="relative h-72 md:h-96">
             <img src={it.img} alt={it.title} className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />

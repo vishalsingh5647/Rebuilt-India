@@ -44,7 +44,7 @@ const items = [
 ];
 
 const Card = ({ item }) => (
-  <div className="min-w-[260px] max-w-[260px] bg-white border border-gray-200 rounded overflow-hidden mr-4">
+  <div className="min-w-[260px] max-w-[260px] bg-white border border-gray-200 rounded overflow-hidden mr-4 hover-lift animate-scaleIn">
     <div className="relative h-36">
       <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
       <div className="absolute left-3 bottom-3 flex gap-2">
@@ -128,7 +128,7 @@ const YouMissed = () => {
   const next = () => { setIndex((i) => (i + 1) % data.length); setProgress(0); };
 
   return (
-    <section className="bg-gray-50">
+    <section className="bg-gray-50 animate-fadeUp">
       <div className="container mx-auto px-4 py-6">
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-3">

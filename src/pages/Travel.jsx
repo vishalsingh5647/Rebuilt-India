@@ -2,7 +2,6 @@ import Navbar from '../components/navbar';
 import YouMissed from '../components/YouMissed';
 import { Search } from 'lucide-react';
 
-// Local tag chip and cards for this page
 const Tag = ({ children, color = 'bg-red-600' }) => (
   <span className={`text-white text-[10px] font-semibold px-2 py-1 rounded ${color}`}>{children}</span>
 );
@@ -14,6 +13,7 @@ const GridCard = ({ item }) => (
       <div className="absolute left-3 bottom-3 flex gap-2">
         {item.tags[0] && <Tag color="bg-red-600">{item.tags[0]}</Tag>}
         {item.tags[1] && <Tag color="bg-red-700">{item.tags[1]}</Tag>}
+        {item.tags[2] && <Tag color="bg-green-600">{item.tags[2]}</Tag>}
       </div>
     </div>
     <div className="p-3">
@@ -40,51 +40,51 @@ const SidebarItem = ({ item }) => (
 
 const gridItems = [
   {
-    tags: ['MAIN STORIES', 'TECH'],
-    title: 'MacBook Pro for Business Man',
-    date: 'Jan 19, 2019',
+    tags: ['MAIN STORIES', 'TRAVEL'],
+    title: 'Beautiful Cities in the World',
+    date: 'Jan 17, 2019',
     author: 'Theme Horse',
-    img: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=800&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=800&auto=format&fit=crop',
     excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eros ante, placerat ac pulvinar at, iaculis a quam...'
   },
   {
-    tags: ['POPULAR', 'TECH'],
-    title: 'Best Microsoft Surface Laptop',
+    tags: ['TRAVEL', 'TRENDING STORIES'],
+    title: 'Best Nightlife Cities in the World',
     date: 'Jan 16, 2019',
     author: 'Theme Horse',
-    img: 'https://images.unsplash.com/photo-1517059224940-d4af9eec41e5?q=80&w=800&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1500048993953-d23a436266cf?q=80&w=800&auto=format&fit=crop',
     excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eros ante, placerat ac pulvinar at, iaculis a quam...'
   },
   {
-    tags: ['TECH'],
-    title: 'Flying into the Future with Drone Technology',
+    tags: ['POPULAR', 'TRAVEL'],
+    title: 'Eiffel Tower Visit Paris City Tour',
     date: 'Jan 16, 2019',
     author: 'Theme Horse',
-    img: 'https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=800&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=800&auto=format&fit=crop',
     excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eros ante, placerat ac pulvinar at, iaculis a quam...'
   },
   {
-    tags: ['POPULAR'],
-    title: 'Apple will launch a three camera',
-    date: 'Jan 15, 2019',
+    tags: ['RECOMMENDED', 'TRAVEL'],
+    title: 'Holiday Tour in Dubai',
+    date: 'Jan 16, 2019',
     author: 'Theme Horse',
-    img: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=800&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1546412414-8035e1776c9a?q=80&w=800&auto=format&fit=crop',
     excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eros ante, placerat ac pulvinar at, iaculis a quam...'
   },
   {
-    tags: ['RECOMMENDED', 'TECH'],
-    title: 'The Best iPad Productivity Apps',
+    tags: ['MAIN STORIES', 'TRAVEL', 'RECOMMENDED'],
+    title: 'Affordable Himalayan Tour Nepal',
     date: 'Jan 14, 2019',
     author: 'Theme Horse',
-    img: 'https://images.unsplash.com/photo-1517059224940-d4af9eec41e5?q=80&w=800&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1521292270410-a8c323a7d4f3?q=80&w=800&auto=format&fit=crop',
     excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eros ante, placerat ac pulvinar at, iaculis a quam...'
   },
   {
-    tags: ["EDITOR'S PICK", 'TECH'],
-    title: 'Best Classic Film Cameras',
+    tags: ["EDITOR'S PICK", 'TRAVEL'],
+    title: 'Best Coastal Road Trips',
     date: 'Jan 14, 2019',
     author: 'Theme Horse',
-    img: 'https://images.unsplash.com/photo-1484704849700-f032a568e944?q=80&w=800&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=800&auto=format&fit=crop',
     excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eros ante, placerat ac pulvinar at, iaculis a quam...'
   }
 ];
@@ -140,7 +140,7 @@ const sidebarData = {
   ]
 };
 
-const CategoriesPanel = ({ current = 'Tech' }) => {
+const CategoriesPanel = ({ current = 'Travel' }) => {
   const cats = [
     { name: "Editor's Pick", count: 1 },
     { name: 'Fashion', count: 5 },
@@ -174,40 +174,36 @@ const CategoriesPanel = ({ current = 'Tech' }) => {
   );
 };
 
-const Tech = () => {
+const Travel = () => {
   return (
     <div>
       <Navbar />
 
-      {/* Breadcrumb Section */}
-      <section className="bg-white border-t-2 border-red-600 animate-fadeDown">
+            <section className="bg-white border-t-2 border-red-600 animate-fadeDown">
         <div className="container mx-auto px-4 py-3 text-sm">
           <nav className="flex items-center gap-2 text-gray-600" aria-label="Breadcrumb">
             <a href="/" className="text-red-600 hover:text-red-700 font-medium">Home</a>
             <span className="text-gray-400">/</span>
             <a href="/blog" className="text-red-600 hover:text-red-700 font-medium">Blog</a>
             <span className="text-gray-400">/</span>
-            <span className="text-gray-800 font-semibold">Tech</span>
+            <span className="text-gray-800 font-semibold">Travel</span>
           </nav>
         </div>
       </section>
 
-      {/* Tech category section */}
-      <section className="bg-gray-50 animate-fadeUp">
+            <section className="bg-gray-50 animate-fadeUp">
         <div className="container mx-auto px-4 py-6">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-            {/* Grid */}
-            <div className="md:col-span-8">
+                        <div className="md:col-span-8">
+              <h2 className="text-xl font-semibold text-gray-900 mb-3">Category: Travel</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {gridItems.map((it, idx) => (
                   <GridCard key={idx} item={it} />
                 ))}
               </div>
             </div>
-            {/* Sidebar */}
-            <div className="md:col-span-4 space-y-4">
-              {/* Search */}
-              <div className="bg-white border border-gray-200 rounded overflow-hidden">
+                        <div className="md:col-span-4 space-y-4">
+                            <div className="bg-white border border-gray-200 rounded overflow-hidden">
                 <div className="p-3">
                   <div className="flex items-center">
                     <input
@@ -221,8 +217,7 @@ const Tech = () => {
                   </div>
                 </div>
               </div>
-              {/* Tabs */}
-              <div className="bg-white border border-gray-200 rounded">
+                            <div className="bg-white border border-gray-200 rounded">
                 <div className="flex items-center gap-2 p-2">
                   {['Popular', 'Recent', 'Commented'].map((t) => (
                     <button key={t} className={`text-sm px-3 py-1.5 rounded ${t === 'Popular' ? 'bg-white text-gray-900 border border-gray-200' : 'text-gray-700'}`}>
@@ -237,8 +232,7 @@ const Tech = () => {
                 </div>
               </div>
 
-              {/* Categories */}
-              <CategoriesPanel current="Tech" />
+                            <CategoriesPanel current="Travel" />
             </div>
           </div>
         </div>
@@ -249,4 +243,4 @@ const Tech = () => {
   );
 };
 
-export default Tech;
+export default Travel;

@@ -3,7 +3,7 @@ const Tag = ({ children, color = 'bg-red-600' }) => (
 );
 
 const OverlayCard = ({ item }) => (
-  <div className="bg-white border border-gray-200 rounded overflow-hidden">
+  <div className="bg-white border border-gray-200 rounded overflow-hidden hover-lift animate-scaleIn">
     <div className="relative h-44 md:h-56">
       <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
@@ -53,7 +53,7 @@ const items = [
 
 const TravelStyle2 = () => {
   return (
-    <section className="bg-gray-50">
+    <section className="bg-gray-50 animate-fadeUp">
       <div className="container mx-auto px-4 py-6">
         <div className="flex items-center justify-between mb-3">
           <h2 className="text-gray-800 font-semibold">Travel – Style 2</h2>

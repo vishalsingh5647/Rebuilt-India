@@ -3,7 +3,7 @@ const Pill = ({ children }) => (
 );
 
 const Featured = ({ item }) => (
-  <div className="bg-white border border-gray-200 rounded overflow-hidden">
+  <div className="bg-white border border-gray-200 rounded overflow-hidden hover-lift animate-scaleIn">
     <div className="h-40 md:h-44 lg:h-52">
       <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
     </div>
@@ -17,7 +17,7 @@ const Featured = ({ item }) => (
 );
 
 const RowCard = ({ item }) => (
-  <div className="bg-white border border-gray-200 rounded overflow-hidden flex gap-3 p-3 items-start">
+  <div className="bg-white border border-gray-200 rounded overflow-hidden flex gap-3 p-3 items-start hover-lift animate-scaleIn">
     <img src={item.img} alt={item.title} className="w-20 h-16 object-cover rounded" />
     <div className="min-w-0">
       <div className="flex gap-2">
@@ -73,7 +73,7 @@ const data = {
 
 const SportStyle3 = () => {
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 animate-fadeUp">
       <div className="flex items-center justify-between mb-1">
         <h2 className="text-gray-800 font-semibold">Sports – Style 3</h2>
       </div>

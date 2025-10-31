@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import Home from './pages/home'
 import Tech from './pages/Tech'
+import Travel from './pages/Travel'
 import Navbar from './components/navbar'
 
 function BlankPage() {
@@ -25,8 +26,9 @@ function App() {
 
   if (pathname === '/') return <Home />
   if (pathname.startsWith('/tech')) return <Tech />
+  if (pathname.startsWith('/travel')) return <Travel />
 
-  // For all other pages (travel, health, fashion, sports, blog, support, subscribe), render blank until built
+  // For all other pages (health, fashion, sports, blog, support, subscribe), render blank until built
   return <BlankPage />
 }
 

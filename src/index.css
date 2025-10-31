@@ -40,4 +40,29 @@
   @media (prefers-reduced-motion: reduce) {
     .marquee-track { animation: none; }
   }
+
+  /* Animations */
+  @keyframes fade-up {
+    0% { opacity: 0; transform: translateY(16px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fade-down {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes scale-in {
+    0% { opacity: 0; transform: scale(.96); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+  .animate-fadeUp { animation: fade-up .6s ease-out both; }
+  .animate-fadeDown { animation: fade-down .5s ease-out both; }
+  .animate-scaleIn { animation: scale-in .5s ease-out both; }
+  .delay-100 { animation-delay: .1s; }
+  .delay-200 { animation-delay: .2s; }
+  .delay-300 { animation-delay: .3s; }
+  .delay-400 { animation-delay: .4s; }
+
+  /* Hover lift utility */
+  .hover-lift { transition: transform .2s ease, box-shadow .2s ease; }
+  .hover-lift:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,.08); }
 }
