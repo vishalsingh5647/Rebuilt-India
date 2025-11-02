@@ -11,6 +11,7 @@ import Random from '../components/Random';
 import YouMissed from '../components/YouMissed';
 import TravelTech from '../components/TravelTech';
 import SportStyle3 from '../components/SportStyle-3';
+import Footer from '../components/Footer';
 
 const Home = () => {
   return (
@@ -41,6 +42,7 @@ const Home = () => {
         </div>
       </section>
       <YouMissed />
+      <Footer />
     </div>
   );
 };

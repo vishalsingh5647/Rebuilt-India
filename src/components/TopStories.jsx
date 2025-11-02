@@ -87,8 +87,8 @@ const TopStories = () => {
   return (
     <section className="bg-gray-50 animate-fadeUp">
       <div className="container mx-auto px-4 py-6">
-        <div className="relative overflow-hidden pb-3 group">
-          <div className="flex items-center gap-4 whitespace-nowrap w-max animate-marquee">
+        <div className="relative overflow-hidden pb-3 group edge-fade">
+          <div className="flex items-center gap-4 whitespace-nowrap w-max marquee-track">
             {[...pills, ...pills].map((p, i) => (
               <div
                 key={i}

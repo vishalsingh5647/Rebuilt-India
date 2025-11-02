@@ -3,7 +3,6 @@ import YouMissed from '../components/YouMissed';
 import { Search } from 'lucide-react';
 import Footer from '../components/Footer';
 
-// Local tag chip and cards for this page
 const Tag = ({ children, color = 'bg-red-600' }) => (
   <span className={`text-white text-[10px] font-semibold px-2 py-1 rounded ${color}`}>{children}</span>
 );
@@ -15,6 +14,7 @@ const GridCard = ({ item }) => (
       <div className="absolute left-3 bottom-3 flex gap-2">
         {item.tags[0] && <Tag color="bg-red-600">{item.tags[0]}</Tag>}
         {item.tags[1] && <Tag color="bg-red-700">{item.tags[1]}</Tag>}
+        {item.tags[2] && <Tag color="bg-green-600">{item.tags[2]}</Tag>}
       </div>
     </div>
     <div className="p-3">
@@ -41,51 +41,43 @@ const SidebarItem = ({ item }) => (
 
 const gridItems = [
   {
-    tags: ['MAIN STORIES', 'TECH'],
-    title: 'MacBook Pro for Business Man',
-    date: 'Jan 19, 2019',
-    author: 'Theme Horse',
-    img: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=800&auto=format&fit=crop',
-    excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eros ante, placerat ac pulvinar at, iaculis a quam...'
-  },
-  {
-    tags: ['POPULAR', 'TECH'],
-    title: 'Best Microsoft Surface Laptop',
+    tags: ['FASHION'],
+    title: "Women’s high fashion heels",
     date: 'Jan 16, 2019',
     author: 'Theme Horse',
-    img: 'https://images.unsplash.com/photo-1517059224940-d4af9eec41e5?q=80&w=800&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1504575702566-733b5aa0b5fd?q=80&w=800&auto=format&fit=crop',
     excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eros ante, placerat ac pulvinar at, iaculis a quam...'
   },
   {
-    tags: ['TECH'],
-    title: 'Flying into the Future with Drone Technology',
+    tags: ['FASHION'],
+    title: 'Wedding Dresses and Fashion Accessories',
     date: 'Jan 16, 2019',
     author: 'Theme Horse',
-    img: 'https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=800&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800&auto=format&fit=crop',
     excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eros ante, placerat ac pulvinar at, iaculis a quam...'
   },
   {
-    tags: ['POPULAR'],
-    title: 'Apple will launch a three camera',
+    tags: ['FASHION', 'MAIN STORIES'],
+    title: 'Perfect Suit for Every Type of Guy',
     date: 'Jan 15, 2019',
     author: 'Theme Horse',
-    img: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=800&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1494955464529-790512c65305?q=80&w=800&auto=format&fit=crop',
     excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eros ante, placerat ac pulvinar at, iaculis a quam...'
   },
   {
-    tags: ['RECOMMENDED', 'TECH'],
-    title: 'The Best iPad Productivity Apps',
+    tags: ['FASHION', 'RECOMMENDED'],
+    title: 'The Best Red Lipsticks of all Time',
     date: 'Jan 14, 2019',
     author: 'Theme Horse',
-    img: 'https://images.unsplash.com/photo-1517059224940-d4af9eec41e5?q=80&w=800&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1490111718993-d98654ce6cf7?q=80&w=800&auto=format&fit=crop',
     excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eros ante, placerat ac pulvinar at, iaculis a quam...'
   },
   {
-    tags: ["EDITOR'S PICK", 'TECH'],
-    title: 'Best Classic Film Cameras',
+    tags: ['FASHION', 'RECOMMENDED'],
+    title: 'Must Have Makeup Accessories',
     date: 'Jan 14, 2019',
     author: 'Theme Horse',
-    img: 'https://images.unsplash.com/photo-1484704849700-f032a568e944?q=80&w=800&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?q=80&w=800&auto=format&fit=crop',
     excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eros ante, placerat ac pulvinar at, iaculis a quam...'
   }
 ];
@@ -120,28 +112,10 @@ const sidebarData = {
       author: 'Theme Horse',
       img: 'https://images.unsplash.com/photo-1500835556837-99ac94a94552?q=80&w=200&auto=format&fit=crop'
     }
-  ],
-  Recent: [
-    {
-      tags: ['TRAVEL'],
-      title: 'Best Nightlife Cities in the World',
-      date: 'Jan 16, 2019',
-      author: 'Theme Horse',
-      img: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=200&auto=format&fit=crop'
-    }
-  ],
-  Commented: [
-    {
-      tags: ['TRAVEL'],
-      title: 'Beautiful Cities in the World',
-      date: 'Jan 7, 2019',
-      author: 'Theme Horse',
-      img: 'https://images.unsplash.com/photo-1508830524289-0adcbe822b40?q=80&w=200&auto=format&fit=crop'
-    }
   ]
 };
 
-const CategoriesPanel = ({ current = 'Tech' }) => {
+const CategoriesPanel = ({ current = 'Fashion' }) => {
   const cats = [
     { name: "Editor's Pick", count: 1 },
     { name: 'Fashion', count: 5 },
@@ -175,12 +149,11 @@ const CategoriesPanel = ({ current = 'Tech' }) => {
   );
 };
 
-const Tech = () => {
+const Fashion = () => {
   return (
     <div>
       <Navbar />
 
-      {/* Breadcrumb Section */}
       <section className="bg-white border-t-2 border-red-600 animate-fadeDown">
         <div className="container mx-auto px-4 py-3 text-sm">
           <nav className="flex items-center gap-2 text-gray-600" aria-label="Breadcrumb">
@@ -188,26 +161,24 @@ const Tech = () => {
             <span className="text-gray-400">/</span>
             <a href="/blog" className="text-red-600 hover:text-red-700 font-medium">Blog</a>
             <span className="text-gray-400">/</span>
-            <span className="text-gray-800 font-semibold">Tech</span>
+            <span className="text-gray-800 font-semibold">Fashion</span>
           </nav>
         </div>
       </section>
 
-      {/* Tech category section */}
       <section className="bg-gray-50 animate-fadeUp">
         <div className="container mx-auto px-4 py-6">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-            {/* Grid */}
             <div className="md:col-span-8">
+              <h2 className="text-xl font-semibold text-gray-900 mb-3">Category: Fashion</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {gridItems.map((it, idx) => (
                   <GridCard key={idx} item={it} />
                 ))}
               </div>
             </div>
-            {/* Sidebar */}
+
             <div className="md:col-span-4 space-y-4">
-              {/* Search */}
               <div className="bg-white border border-gray-200 rounded overflow-hidden">
                 <div className="p-3">
                   <div className="flex items-center">
@@ -222,7 +193,7 @@ const Tech = () => {
                   </div>
                 </div>
               </div>
-              {/* Tabs */}
+
               <div className="bg-white border border-gray-200 rounded">
                 <div className="flex items-center gap-2 p-2">
                   {['Popular', 'Recent', 'Commented'].map((t) => (
@@ -238,8 +209,7 @@ const Tech = () => {
                 </div>
               </div>
 
-              {/* Categories */}
-              <CategoriesPanel current="Tech" />
+              <CategoriesPanel current="Fashion" />
             </div>
           </div>
         </div>
@@ -251,4 +221,4 @@ const Tech = () => {
   );
 };
 
-export default Tech;
+export default Fashion;

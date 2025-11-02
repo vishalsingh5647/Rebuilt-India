@@ -52,25 +52,23 @@ const Health = () => {
     <section className="bg-gray-50 animate-fadeUp">
       <div className="max-w-6xl mx-auto px-2 sm:px-3 py-6">
         <h2 className="text-gray-800 font-semibold mb-3">Health</h2>
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-          <div className="md:col-span-8">
-            <div className="bg-white border border-gray-200 rounded overflow-hidden hover-lift animate-scaleIn">
-              <div className="relative h-52 md:h-60">
-                <img src={f.img} alt={f.title} className="w-full h-full object-cover" />
-              </div>
-              <div className="p-3">
-                <Pill text={f.tag} />
-                <h3 className="mt-1.5 text-xl font-semibold text-gray-900">{f.title}</h3>
-                <p className="text-xs text-gray-500 mt-1">{f.date} / {f.author}</p>
-                <p className="text-[13px] text-gray-700 mt-2 leading-relaxed">{f.excerpt}</p>
-              </div>
+        <div className="space-y-4">
+          <div className="bg-white border border-gray-200 rounded overflow-hidden hover-lift animate-scaleIn">
+            <div className="relative h-52 md:h-60">
+              <img src={f.img} alt={f.title} className="w-full h-full object-cover" />
+            </div>
+            <div className="p-3">
+              <Pill text={f.tag} />
+              <h3 className="mt-1.5 text-xl font-semibold text-gray-900">{f.title}</h3>
+              <p className="text-xs text-gray-500 mt-1">{f.date} / {f.author}</p>
+              <p className="text-[13px] text-gray-700 mt-2 leading-relaxed">{f.excerpt}</p>
             </div>
           </div>
 
-          <div className="md:col-span-4 space-y-3">
+          <div className="space-y-3">
             {healthData.list.map((it, i) => (
               <div key={i} className="bg-white border border-gray-200 rounded p-3 flex gap-3 items-start hover-lift animate-scaleIn">
-                <img src={it.img} alt={it.title} className="w-20 h-16 object-cover rounded" />
+                <img src={it.img} alt={it.title} className="w-24 h-16 md:w-28 object-cover rounded" />
                 <div className="min-w-0">
                   <div className="flex gap-2">
                     <Pill text={it.tag} />
