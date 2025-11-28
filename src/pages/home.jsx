@@ -8,7 +8,6 @@ import SportsStyle2 from '../components/SportsStyle-2';
 import FashionStyle2 from '../components/FashionStyle-2';
 import TravelStyle2 from '../components/TravelStyle-2';
 import Random from '../components/Random';
-import YouMissed from '../components/YouMissed';
 import TravelTech from '../components/TravelTech';
 import SportStyle3 from '../components/SportStyle-3';
 import Footer from '../components/Footer';
@@ -41,7 +40,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <YouMissed />
       <Footer />
     </div>
   );

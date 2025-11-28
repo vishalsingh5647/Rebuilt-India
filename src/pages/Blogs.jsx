@@ -1,6 +1,5 @@
 import Navbar from '../components/navbar';
 import PopularStories from '../components/PopularStories';
-import YouMissed from '../components/YouMissed';
 import Footer from '../components/Footer';
 
 const Tag = ({ children, color = 'bg-red-600' }) => (
@@ -10,7 +9,7 @@ const Tag = ({ children, color = 'bg-red-600' }) => (
 const OverlayCard = ({ item, height = 'h-56' }) => (
   <a href="#" className={`relative block rounded overflow-hidden bg-gray-200 ${height} hover-lift animate-scaleIn`}>
     <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
-    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+    <div className="absolute inset-0 bg-linear-to-t from-gray-900 via-gray-900/70 to-transparent" />
     <div className="absolute left-3 bottom-3 right-3">
       <div className="flex gap-2 mb-2">
         {item.tags?.[0] && <Tag color="bg-red-600">{item.tags[0]}</Tag>}
@@ -363,7 +362,6 @@ const Blogs = () => {
         </div>
       </section>
 
-      <YouMissed />
       <Footer />
     </div>
   );

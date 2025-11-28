@@ -1,5 +1,4 @@
 import Navbar from '../components/navbar';
-import YouMissed from '../components/YouMissed';
 import { Search } from 'lucide-react';
 import Footer from '../components/Footer';
 
@@ -245,7 +244,6 @@ const Tech = () => {
         </div>
       </section>
 
-      <YouMissed />
       <Footer />
     </div>
   );

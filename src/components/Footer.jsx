@@ -1,23 +1,3 @@
-const links = [
-  { label: 'Home', href: '/' },
-  { label: 'Tech', href: '/tech' },
-  { label: 'Travel', href: '/travel' },
-  { label: 'Health', href: '/health' },
-  { label: 'Fashion', href: '/fashion' },
-  { label: 'Sports', href: '/sports' },
-  { label: 'Blog', href: '/blog' },
-  { label: 'Support', href: '/support' },
-  { label: 'Subscribe', href: '/subscribe' }
-];
-
-const categories = [
-  "Editor's Pick",
-  'Main Stories',
-  'Popular',
-  'Recommended',
-  'Trending Stories'
-];
-
 const Social = ({ brand, url }) => (
   <a
     href={url}
@@ -53,31 +33,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="md:col-span-3">
-            <h4 className="text-white font-semibold mb-3">Quick Links</h4>
-            <ul className="space-y-2 text-sm">
-              {links.map((l) => (
-                <li key={l.href}>
-                  <a href={l.href} className="text-gray-300 hover:text-white transition-colors">
-                    {l.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="md:col-span-3">
-            <h4 className="text-white font-semibold mb-3">Categories</h4>
-            <ul className="space-y-2 text-sm">
-              {categories.map((c) => (
-                <li key={c}>
-                  <a href="#" className="text-gray-300 hover:text-white transition-colors">{c}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="md:col-span-2">
+          <div className="md:col-span-6">
             <h4 className="text-white font-semibold mb-3">Newsletter</h4>
             <p className="text-sm text-gray-400">Get our best stories delivered to your inbox.</p>
             <form className="mt-3" onSubmit={(e) => e.preventDefault()}>
